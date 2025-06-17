@@ -1,0 +1,47 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <h1 id="title">Survey form</h1>
+    <p id="description">Lorem ipsum dolor sit amet. Ex eligendi dignissimos hic molestiae consectetur sed dignissimos dolores in excepturi quia?</p>
+    <form id="survey-form">
+      <fieldset>
+     <label for="name" id="name-label">Your name</label>
+     <input type="text" id="name" name="name" required placeholder="Ex:Joe Dohe"><br/>
+
+     <label for="email" id="email-label">Your email</label>
+     <input type="email" id="email" name="email"required placeholder="john27@gmail.com"><br/>
+     <label for="number" id="number-label">Your phone number</label>
+     <input type="number" id="number" name="number" required min="7" max="30" placeholder="+490455533">
+</fieldset>
+<fieldset>
+<label for="dropdown">Choose your answer wisely!</label>
+  <select id="dropdown">
+    <option value="yes-option">Yes</option>
+    <option value="no-option">No</option> 
+    </select> 
+    <br/>
+  <label for="pizza-option">Pizza</label>
+  <input type="radio" id="pizza-option" name="food" value="name">
+  <label for="burger-option">Burger</label>
+  <input type="radio" id="burger-option" name="food" value="name">
+  <br/>
+  <label for="new-york">New York</label>
+  <input type="checkbox" id="new-york" value="city">
+  <label for="los-angeles">Los angeles</label>
+  <input type="checkbox" id="los-angeles" value="city">
+</fieldset>
+<textarea id="review" rows="4" cols="10"></textarea> 
+<button type="#submit" id="submit">Submit</button>
+    </form>
+  </body>
+</html>
+
+** end of index.html **
+

@@ -1,0 +1,42 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Video Compilation Page</title>
+</head>
+
+<body>
+<main>  
+<h1>Video of kitties!</h1>
+<p>Here you can find 3 beatufiul videos of kitties!</p>
+<section>
+<h2>Orange cat!</h2>
+<p>Orange cat that sitting on the fence (very cute by the way!)</p>
+<iframe src="https://pixabay.com/videos/cat-orange-cat-domestic-cat-cute-179212/" width="560" height="315" title="Cat">
+</iframe>
+</section>
+<section>
+<h2>Black cat!</h2>
+<p>Here you can see black cat. Do you know that cats are the most ancien animal that was praised by people?</p>
+<iframe src="https://pixabay.com/videos/cat-feline-black-cat-fatigue-rest-130139/" width="560" height="315" title="Black cat"></iframe>
+</section>
+<section>
+<h2>Tuxedo cat!</h2>
+<p>Do you know that Lego has made lego set Tuxedo?</p>
+<iframe src="https://pixabay.com/videos/cat-stray-cat-tuxedo-cat-tuxedo-168334/" width="560" height="315" title="Tuxedo cat"></iframe>
+</section>
+
+
+
+
+</main>
+
+</body>
+
+</html>
+
+** end of index.html **
+

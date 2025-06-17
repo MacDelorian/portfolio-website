@@ -1,0 +1,40 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta title ="Travel Agency Page">
+  <meta name="description" content="Our website is specifies on elite destinations around the world,from Kyiv to New York? easy.">
+  <title>Travel Agency</title>
+  </head>
+  <body>
+  <h1>Cheap travel destinations? Its all here!</h1>
+  <p>Making people happy from 2001!</p>
+  <h2>Packages</h2>
+  <p>Introducing our packages!<br>Our agency proposing many destinations based on your budget.Need some exotic? We have destinations to France!</p>
+  <ul>
+  <li><a href="https://www.freecodecamp.org/learn" target="_blank">Group Travels</a></li>
+  <li><a href="https://www.freecodecamp.org/learn" target="_blank">Private Tours</a></li>
+</ul>
+<h2>Top Itineraries</h2>
+<figure>
+<a href="https://www.freecodecamp.org/learn" target="_blank"><img src="https://cdn.freecodecamp.org/curriculum/labs/colosseo.jpg" alt="Colosseo">
+</a>
+<figcaption>Italy, <strong>Colosseo</strong>
+</figure>
+<figure>
+<a href="https://www.freecodecamp.org/learn" target="_blank"><img src="https://cdn.freecodecamp.org/curriculum/labs/alps.jpg" alt="France, Alps">
+</a>
+<figcaption>France, <strong>Alpes</strong>
+</figure>
+<figure> 
+<a href="https://www.freecodecamp.org/learn" target="_blank"><img src="https://cdn.freecodecamp.org/curriculum/labs/sea.jpg" alt="Black Sea">
+</a>
+<figcaption>Ukraine, <strong>Crimea</strong></figcaption>
+ </figure> 
+  </body>
+  </html>
+
+** end of index.html **
+
