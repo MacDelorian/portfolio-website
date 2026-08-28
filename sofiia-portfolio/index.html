@@ -135,10 +135,16 @@ footer{text-align:center;padding:24px;font-size:11px;color:var(--light);letter-s
 
 
 /* SERVICE TABS */
-.service-tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:0 24px 40px}
-.stab{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);background:none;border:1px solid var(--rule);cursor:pointer;padding:8px 18px;border-radius:30px;transition:all .25s ease}
-.stab:hover{border-color:var(--ink);color:var(--ink)}
-.stab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.service-tabs{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;padding:0 24px 40px}
+/* set in Comfortaa like the headings; the active one is marked by a dot
+   rather than a fill, so the row stays quiet next to the work images */
+.stab{font-family:'Comfortaa',sans-serif;font-size:16px;font-weight:300;color:var(--light);background:none;border:none;cursor:pointer;padding:6px 0;display:inline-flex;align-items:center;gap:9px;transition:color .25s ease}
+/* every tab carries the dot invisibly, so nothing shifts when it lights up */
+.stab::before{content:'';width:6px;height:6px;border-radius:50%;background:transparent;transition:background .25s ease}
+.stab:hover{color:var(--mid)}
+.stab.active{color:var(--ink);font-weight:400}
+.stab.active::before{background:var(--accent)}
+@media(max-width:620px){.service-tabs{gap:20px}.stab{font-size:15px;gap:7px}}
 .service-block.hidden{display:none}
 
 /* CV SECTION */
