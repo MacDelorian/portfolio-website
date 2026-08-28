@@ -99,8 +99,25 @@ main{padding-top:72px}
 .service-tags span{font-size:11px;font-weight:400;letter-spacing:.05em;color:var(--mid);background:#ede9e3;padding:5px 12px;border-radius:20px}
 .service-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:9px 18px;border:1px solid var(--ink);border-radius:30px;transition:all .25s ease}
 .service-link:hover{background:var(--ink);color:#fff}
-.service-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.service-imgs img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;background:#e8e3dc}
+.service-imgs{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
+/* small windows in a row; each opens the full page in the viewer */
+/* as a flex item the image ignores width alone — min-width:0 and max-width
+   are what actually pin it to the thumbnail size */
+.service-imgs img{flex:0 0 auto;width:104px;min-width:0;max-width:104px;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:4px;background:#e8e3dc;cursor:zoom-in;transition:transform .25s ease,box-shadow .25s ease}
+.service-imgs img:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(28,26,24,.18)}
+
+/* ---- WORK VIEWER ---- */
+.lb{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;background:rgba(13,17,34,.95);opacity:0;transition:opacity .25s ease}
+.lb.open{display:flex}
+.lb.shown{opacity:1}
+.lb-img{max-width:92vw;max-height:84vh;object-fit:contain;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.lb button{position:absolute;background:none;border:none;color:rgba(253,247,226,.75);cursor:pointer;font-family:'Jost',sans-serif;transition:color .2s ease}
+.lb button:hover{color:#fdf7e2}
+.lb-close{top:22px;right:26px;font-size:30px;line-height:1}
+.lb-prev,.lb-next{top:50%;transform:translateY(-50%);font-size:44px;line-height:1;padding:16px}
+.lb-prev{left:12px}.lb-next{right:12px}
+.lb-count{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.18em;color:rgba(253,247,226,.6)}
+@media(max-width:620px){.lb-prev,.lb-next{font-size:34px;padding:10px}.lb-img{max-width:94vw;max-height:78vh}}
 .service-imgs .img-placeholder{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#ede9e3,#ddd8d0);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--light);font-size:11px;letter-spacing:.08em}
 
 /* CONTACT SECTION */
@@ -359,11 +376,55 @@ footer{text-align:center;padding:24px;font-size:11px;color:var(--light);letter-s
 
 </main>
 
+<!-- WORK VIEWER -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Work viewer">
+  <button class="lb-close" onclick="lbClose()" aria-label="Close">&times;</button>
+  <button class="lb-prev" onclick="lbStep(-1)" aria-label="Previous">&#8249;</button>
+  <img class="lb-img" id="lbImg" alt="">
+  <button class="lb-next" onclick="lbStep(1)" aria-label="Next">&#8250;</button>
+  <p class="lb-count" id="lbCount"></p>
+</div>
+
 <footer>
   <span>© 2025 Sofiia C</span>
 </footer>
 
 <script>
+/* ---- work viewer: click a window, then page through that set ---- */
+(function(){
+  const lb=document.getElementById('lb'), img=document.getElementById('lbImg'), count=document.getElementById('lbCount');
+  let set=[], at=0;
+
+  window.lbClose=()=>{lb.classList.remove('shown');setTimeout(()=>lb.classList.remove('open'),250);document.body.style.overflow=''};
+  window.lbStep=d=>{if(!set.length)return;at=(at+d+set.length)%set.length;show()};
+  function show(){img.src=set[at].src;img.alt=set[at].alt||'';count.textContent=(at+1)+' / '+set.length}
+
+  document.querySelectorAll('.service-imgs').forEach(strip=>{
+    const imgs=[...strip.querySelectorAll('img')];
+    imgs.forEach((el,n)=>{
+      el.addEventListener('click',()=>{
+        set=imgs;at=n;show();
+        lb.classList.add('open');document.body.style.overflow='hidden';
+        requestAnimationFrame(()=>lb.classList.add('shown'));
+      });
+    });
+  });
+
+  lb.addEventListener('click',e=>{if(e.target===lb)lbClose()});
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')lbClose();
+    if(e.key==='ArrowLeft')lbStep(-1);
+    if(e.key==='ArrowRight')lbStep(1);
+  });
+  let x0=null;
+  lb.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',e=>{
+    if(x0===null)return; const dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>50)lbStep(dx<0?1:-1); x0=null;
+  },{passive:true});
+})();
+
 
 
 function filterService(cat) {
