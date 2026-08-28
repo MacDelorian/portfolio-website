@@ -2,8 +2,8 @@
     --sky: #0d1122;
     --clouds: #b9bdcb;
     --ink: #fdf7e6;
-    /* aspect ratio of assets/hero.png — keep in sync if the artwork is replaced */
-    --art-ratio: 2000 / 1264;
+    /* aspect ratio of assets/hero.webp — keep in sync if the artwork is replaced */
+    --art-ratio: 2000 / 1266;
 }
 
 * {
@@ -80,7 +80,8 @@ body {
     text-indent: 0.38em;
     text-transform: uppercase;
     color: rgba(253, 247, 230, 0.9);
-    text-shadow: 0 0 18px rgba(13, 17, 34, 0.85), 0 0 6px rgba(13, 17, 34, 0.7);
+    /* keeps the line readable where it crosses a pale cloud */
+    text-shadow: 0 0 26px rgba(13, 17, 34, 0.9), 0 0 9px rgba(13, 17, 34, 0.85);
     animation: fade-up 1.4s ease-out both;
 }
 
