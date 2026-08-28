@@ -1,0 +1,125 @@
+<!-- ============================================================
+     HERO BLOCK — paste into any page.
+
+     1. Put the artwork next to the page as  assets/hero.webp
+        (or change the src below to wherever the file sits).
+     2. Drop the markup where the old hero block used to be.
+     3. Drop the <style> block into the page's <head>.
+
+     Every class is prefixed sc- so nothing collides with the
+     styles already on the page.
+     ============================================================ -->
+
+<section class="sc-hero">
+    <div class="sc-hero__frame">
+        <img class="sc-hero__art" src="assets/hero.webp"
+             alt="Hand-painted night sky with clouds and stars, hand-lettered “Sofiia C”">
+
+        <!-- The name is real text for search engines and screen readers only;
+             visually it is part of the artwork. -->
+        <h1 class="sc-hero__name">Sofiia C</h1>
+
+        <p class="sc-hero__tagline">Graphic design &amp; illustration</p>
+    </div>
+</section>
+
+
+<style>
+    .sc-hero {
+        /* aspect ratio of the artwork — change if you swap in a different file */
+        --sc-art-ratio: 2000 / 1266;
+        --sc-sky: #0d1122;
+        --sc-clouds: #b9bdcb;
+
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        min-height: 100svh;
+        overflow: hidden;
+        /* fills any space left beside the artwork: sky above, cloud tone below */
+        background: linear-gradient(to bottom,
+                var(--sc-sky) 0 44%,
+                #6d7391 56%,
+                var(--sc-clouds) 70% 100%);
+    }
+
+    .sc-hero__frame {
+        position: relative;
+        width: 100%;
+        /* caps how far the artwork is magnified on tall screens, so the
+           lettering never runs past the edges */
+        height: min(100svh, 160vw);
+        container-type: inline-size;
+    }
+
+    /* On landscape windows the artwork fills the viewport, cropping evenly at
+       the sides rather than leaving bars. */
+    @media (min-aspect-ratio: 5/4) {
+        .sc-hero__frame {
+            width: max(100%, calc(100svh * var(--sc-art-ratio)));
+            height: auto;
+            aspect-ratio: var(--sc-art-ratio);
+        }
+    }
+
+    .sc-hero__art {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Sits just under the lettering, which is centred in the artwork. */
+    .sc-hero__tagline {
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        white-space: nowrap;
+        font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        font-size: clamp(0.5rem, 1.05vw, 0.95rem);
+        font-size: clamp(0.5rem, 1.05cqw, 0.95rem);
+        font-weight: 300;
+        letter-spacing: 0.38em;
+        text-indent: 0.38em;
+        text-transform: uppercase;
+        color: rgba(253, 247, 230, 0.9);
+        /* keeps the line readable where it crosses a pale cloud */
+        text-shadow: 0 0 26px rgba(13, 17, 34, 0.9), 0 0 9px rgba(13, 17, 34, 0.85);
+        animation: sc-fade-up 1.4s ease-out both;
+    }
+
+    @keyframes sc-fade-up {
+        from {
+            opacity: 0;
+            transform: translate(-50%, 10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .sc-hero__tagline {
+            animation: none;
+        }
+    }
+
+    /* The name stays in the markup but not on screen. */
+    .sc-hero__name {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+        border: 0;
+    }
+</style>
