@@ -54,21 +54,23 @@ h1,h2,h3,h4,h5,h6{font-family:'Comfortaa',sans-serif}
 main{padding-top:72px}
 
 /* HERO */
-.hero{--art-ratio:1.5806;position:relative;display:grid;place-items:center;overflow:hidden;text-align:center;padding:0;min-height:calc(100svh - 72px);/* fills any space beside the painting: sky above, cloud tone below */background:linear-gradient(to bottom,#0d1122 0 44%,#6d7391 56%,#b9bdcb 70% 100%)}
-/* only a soft fade into the page below — the painting is not dimmed */
-.hero::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(8,10,22,0) 0%,rgba(8,10,22,0) 86%,rgba(250,248,245,.9) 98%,rgba(250,248,245,1) 100%)}
+.hero{--band:3.8;position:relative;overflow:hidden;text-align:center;padding:0;background:#0d1122}
 .hero>*{position:relative;z-index:1}
 
-/* keeps the painting's proportions, and caps how far it is magnified on tall
-   screens, so the lettering is never cropped */
-.hero-frame{position:relative;width:100%;height:min(calc(100svh - 72px),160vw);container-type:inline-size}
-@media(min-aspect-ratio:5/4){.hero-frame{width:max(100%,calc((100svh - 72px) * 1.5806));height:auto;aspect-ratio:2000/1266}}
+/* A banner strip of the painting. The fixed proportion is what keeps the
+   lettering in the same spot at every width, so the line above it can be
+   placed as a percentage. */
+.hero-frame{position:relative;width:100%;aspect-ratio:var(--band);container-type:inline-size}
 .hero-art{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
 
 /* sits just above the lettering, which is centred in the artwork */
-.hero-eyebrow{position:absolute;left:50%;top:36%;transform:translate(-50%,-100%);margin:0;white-space:nowrap;font-family:'Comfortaa',sans-serif;font-style:italic;font-size:clamp(9px,.85cqw,14px);letter-spacing:.2em;text-transform:uppercase;color:rgba(240,242,250,.92);text-shadow:0 0 26px rgba(8,10,22,.9),0 0 9px rgba(8,10,22,.85);animation:heroFadeUp .9s ease both}
+.hero-eyebrow{position:absolute;left:50%;top:21%;transform:translate(-50%,-100%);margin:0;white-space:nowrap;font-family:'Comfortaa',sans-serif;font-style:italic;font-size:clamp(9px,.85cqw,14px);letter-spacing:.2em;text-transform:uppercase;color:rgba(240,242,250,.92);text-shadow:0 0 26px rgba(8,10,22,.9),0 0 9px rgba(8,10,22,.85);animation:heroFadeUp .9s ease both}
 @keyframes heroFadeUp{from{opacity:0;transform:translate(-50%,calc(-100% + 14px))}to{opacity:1;transform:translate(-50%,-100%)}}
 @media(prefers-reduced-motion:reduce){.hero-eyebrow{animation:none}}
+
+/* narrower screens: a taller strip, so the lettering keeps a readable size */
+@media(max-width:899px){.hero{--band:2.4}.hero-eyebrow{top:30%}}
+@media(max-width:599px){.hero{--band:.9}.hero-eyebrow{top:35%}}
 
 /* the name stays in the markup for search engines and screen readers;
    on screen it is part of the painting */
