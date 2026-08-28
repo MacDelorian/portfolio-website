@@ -91,6 +91,14 @@ main{padding-top:72px}
 .services{max-width:1650px;margin:0 auto;padding:0 96px 80px}
 .service-block{display:grid;grid-template-columns:minmax(0,268px) minmax(0,1fr);gap:46px;align-items:stretch;padding:52px 0;border-bottom:1px solid var(--rule)}
 .service-block:last-child{border-bottom:none}
+/* a warm band behind one block: the tint runs the full width of the window
+   while the content stays in the column */
+.service-block.tinted{position:relative;border-bottom:none;padding:64px 0}
+.service-block.tinted::before{content:'';position:absolute;z-index:-1;top:0;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);background:var(--warm-white,#f0ece5)}
+/* the row fades into the band, not into the page */
+.service-block.tinted .strip::after{background:linear-gradient(to right,rgba(240,236,229,0),var(--warm-white,#f0ece5) 82%)}
+.service-block.tinted .strip-nav{background:rgba(240,236,229,.94)}
+.service-block.tinted .strip-nav:hover{background:#fff}
 .service-block.reverse{direction:rtl}
 .service-block.reverse > *{direction:ltr}
 .service-text h3{font-family:'Comfortaa',sans-serif;font-size:clamp(22px,2.4vw,28px);font-weight:300;margin-bottom:10px}
@@ -306,7 +314,7 @@ footer{text-align:center;padding:24px;font-size:11px;color:var(--light);letter-s
     <div class="services">
 
       <!-- Illustration -->
-      <div class="service-block reveal" data-category="illustration">
+      <div class="service-block tinted reveal" data-category="illustration">
         <div class="service-text">
           <h3 data-i18n="s1_title">Illustration</h3>
           <p data-i18n="s1_desc">Creating individual illustrations to order. Book illustration and layout.</p>
