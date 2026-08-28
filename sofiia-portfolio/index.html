@@ -66,12 +66,12 @@ main{padding-top:72px}
 .hero-art{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
 
 /* sits just above the lettering, which is centred in the artwork */
-.hero-eyebrow{position:absolute;left:49.4%;top:30%;transform:translate(-50%,-100%);margin:0;white-space:nowrap;font-family:'Comfortaa',sans-serif;font-size:clamp(11px,1.05cqw,17px);letter-spacing:.03em;color:#ead4a1;text-shadow:0 0 26px rgba(8,10,22,.9),0 0 12px rgba(200,168,130,.45);animation:heroFadeUp .9s ease both}
-@keyframes heroFadeUp{from{opacity:0;transform:translate(-50%,calc(-100% + 14px))}to{opacity:1;transform:translate(-50%,-100%)}}
+.hero-eyebrow{position:absolute;left:49.4%;top:60%;transform:translate(-50%,0);margin:0;white-space:nowrap;font-family:'Comfortaa',sans-serif;font-size:clamp(11px,1.05cqw,17px);letter-spacing:.03em;color:#ead4a1;text-shadow:0 0 26px rgba(8,10,22,.9),0 0 12px rgba(200,168,130,.45);animation:heroFadeUp .9s ease both}
+@keyframes heroFadeUp{from{opacity:0;transform:translate(-50%,14px)}to{opacity:1;transform:translate(-50%,0)}}
 @media(prefers-reduced-motion:reduce){.hero-eyebrow{animation:none}}
 
 /* narrower screens: a taller strip, so the lettering keeps a readable size */
-@media(max-width:599px){.hero{--band:.9}.hero-eyebrow{top:35%}}
+@media(max-width:599px){.hero{--band:.9}.hero-eyebrow{top:58%}}
 
 /* the name stays in the markup for search engines and screen readers;
    on screen it is part of the painting */
