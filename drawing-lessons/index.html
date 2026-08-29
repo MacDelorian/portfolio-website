@@ -68,8 +68,8 @@ body{background:var(--cream);color:var(--ink);font-family:"Nunito",sans-serif;fo
 .about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .about-tags span{font-size:11px;color:var(--green);background:var(--green-pale);padding:5px 13px;border-radius:20px}
 @media(max-width:1180px){.about-grid{grid-template-columns:1fr;gap:32px}.about-photo-wrap{position:static;width:min(100%,360px);height:auto}.about-photo{position:static;width:100%;height:auto;max-width:none;border-radius:12px}}
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px}@media(max-width:1180px){.gallery{grid-template-columns:repeat(3,1fr)}}@media(max-width:680px){.gallery{grid-template-columns:repeat(2,1fr)}}
-.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;border-radius:6px;transition:transform .3s,box-shadow .3s;display:block}
+.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(150px,1fr);gap:12px;margin-top:44px;padding:6px 0;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}.gallery::-webkit-scrollbar{height:6px}.gallery::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}.gallery::-webkit-scrollbar-track{background:transparent}
+.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;border-radius:6px;transition:transform .3s,box-shadow .3s;display:block;scroll-snap-align:start}
 .gallery img:hover{transform:scale(1.02);box-shadow:0 8px 28px rgba(30,42,30,.15)}
 .gallery img{cursor:zoom-in}
 .lightbox{position:fixed;inset:0;background:rgba(22,28,22,.94);z-index:1200;display:none;align-items:center;justify-content:center;padding:40px 64px}
@@ -81,7 +81,6 @@ body{background:var(--cream);color:var(--ink);font-family:"Nunito",sans-serif;fo
 .lb-nav{top:50%;transform:translateY(-50%);width:46px;height:46px;font-size:28px;padding-bottom:4px}
 .lb-prev{left:18px}.lb-next{right:18px}
 @media(max-width:680px){.lightbox{padding:64px 12px}.lb-prev{left:8px}.lb-next{right:8px}}
-@media(max-width:600px){.gallery{grid-template-columns:repeat(2,1fr)}}
 .how-section{background:var(--green-pale)}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
 .step{text-align:center;padding:28px 20px;background:#fff;border-radius:12px;border:1px solid var(--rule)}
