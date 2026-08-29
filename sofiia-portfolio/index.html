@@ -530,7 +530,7 @@ const i18n = {
     cv_li5:"Collaboration with publishers and international clients",
     cv_download:"Download full CV",
     cv_years:"years of experience", cv_langs:"languages", cv_projects:"projects",
-    stab_all:"All", stab_illus:"Illustration", stab_design:"Design", stab_classes:"Art Classes", see_all:"See all works"
+    stab_all:"All", stab_illus:"Illustration", stab_design:"Design", stab_classes:"Art Classes", see_all:"See all works", deck_back:"Back to the site"
   },
   fr: {
     nav_sections:"Sections", nav_cv:"CV",nav_home:"Accueil", nav_about:"À propos", nav_services:"Services", nav_contact:"Contact",
@@ -556,7 +556,7 @@ const i18n = {
     cv_li5:"Collaboration avec des éditeurs et clients internationaux",
     cv_download:"Télécharger le CV complet",
     cv_years:"ans d'expérience", cv_langs:"langues", cv_projects:"projets",
-    stab_all:"Tous", stab_illus:"Illustration", stab_design:"Design", stab_classes:"Cours", see_all:"Voir tous les travaux"
+    stab_all:"Tous", stab_illus:"Illustration", stab_design:"Design", stab_classes:"Cours", see_all:"Voir tous les travaux", deck_back:"Retour au site"
   },
   ua: {
     nav_sections:"Розділи", nav_cv:"CV / Резюме",nav_home:"Головна", nav_about:"Про мене", nav_services:"Послуги", nav_contact:"Контакт",
@@ -582,7 +582,7 @@ const i18n = {
     cv_li5:"Співпраця з видавництвами та міжнародними клієнтами",
     cv_download:"Завантажити повне CV",
     cv_years:"років досвіду", cv_langs:"мови", cv_projects:"проєктів",
-    stab_all:"Всі", stab_illus:"Ілюстрація", stab_design:"Дизайн", stab_classes:"Уроки", see_all:"Дивитись усі роботи"
+    stab_all:"Всі", stab_illus:"Ілюстрація", stab_design:"Дизайн", stab_classes:"Уроки", see_all:"Дивитись усі роботи", deck_back:"Назад на сайт"
   },
   de: {
     nav_sections:"Bereiche", nav_cv:"Lebenslauf",nav_home:"Startseite", nav_about:"Über mich", nav_services:"Leistungen", nav_contact:"Kontakt",
@@ -608,7 +608,7 @@ const i18n = {
     cv_li5:"Zusammenarbeit mit Verlagen und internationalen Kunden",
     cv_download:"Vollständigen Lebenslauf herunterladen",
     cv_years:"Jahre Erfahrung", cv_langs:"Sprachen", cv_projects:"Projekte",
-    stab_all:"Alle", stab_illus:"Illustration", stab_design:"Design", stab_classes:"Kurse", see_all:"Alle Arbeiten ansehen"
+    stab_all:"Alle", stab_illus:"Illustration", stab_design:"Design", stab_classes:"Kurse", see_all:"Alle Arbeiten ansehen", deck_back:"Zurück zur Seite"
   },
   pl: {
     nav_sections:"Sekcje", nav_cv:"CV",nav_home:"Strona główna", nav_about:"O mnie", nav_services:"Usługi", nav_contact:"Kontakt",
@@ -634,7 +634,7 @@ const i18n = {
     cv_li5:"Współpraca z wydawnictwami i klientami międzynarodowymi",
     cv_download:"Pobierz pełne CV",
     cv_years:"lat doświadczenia", cv_langs:"języki", cv_projects:"projektów",
-    stab_all:"Wszystkie", stab_illus:"Ilustracja", stab_design:"Design", stab_classes:"Kursy", see_all:"Zobacz wszystkie prace"
+    stab_all:"Wszystkie", stab_illus:"Ilustracja", stab_design:"Design", stab_classes:"Kursy", see_all:"Zobacz wszystkie prace", deck_back:"Powrót do strony"
   }
 };
 
@@ -656,7 +656,14 @@ function setLang(lang) {
     if (btn.textContent.toLowerCase() === lang) btn.classList.add('active');
   });
   document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
+  try { localStorage.setItem('lang', lang); } catch (e) {}
 }
+
+// carry the choice between pages
+try {
+  const saved = localStorage.getItem('lang');
+  if (saved && i18n[saved]) addEventListener('DOMContentLoaded', () => setLang(saved));
+} catch (e) {}
 
 // Hamburger / nav
 function toggleNav() {
