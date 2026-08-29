@@ -57,7 +57,7 @@ main{padding-top:72px}
 .hero{--band:2.4;position:relative;overflow:hidden;text-align:center;padding:0;background:#0d1122}
 .hero>*{position:relative;z-index:1}
 /* the foot of the painting dissolves into the page */
-.hero::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(250,248,245,0) 62%,rgba(250,248,245,.42) 82%,rgba(250,248,245,.86) 95%,var(--cream) 100%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(250,248,245,0) 58%,rgba(250,248,245,.28) 80%,rgba(250,248,245,.72) 90%,var(--cream) 98%)}
 
 /* A banner strip of the painting. The fixed proportion is what keeps the
    lettering in the same spot at every width, so the line above it can be
@@ -230,7 +230,7 @@ footer{text-align:center;padding:24px;font-size:11px;color:var(--light);letter-s
 @media(max-width:620px){.cv-inner{grid-template-columns:1fr}.cv-visual{display:none}}
 
 /* ABOUT SECTION */
-.about-section{max-width:1060px;margin:0 auto;padding:76px 24px;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:52px;align-items:stretch}
+.about-section{position:relative;z-index:3;max-width:1060px;margin:clamp(-210px,-10.5vw,-80px) auto 0;padding:76px 24px;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:52px;align-items:stretch}
 /* the photo is shown whole — contain scales it to the height of the text
    beside it, so the two line up at the heading and end together */
 .about-photo-wrap{position:relative}
@@ -240,7 +240,7 @@ footer{text-align:center;padding:24px;font-size:11px;color:var(--light);letter-s
 .about-section p{font-size:18.5px;color:var(--mid);line-height:1.9;margin-bottom:20px}
 .about-section p:last-child{margin-bottom:0}
 /* stacked on narrow screens: photo first, then the text */
-@media(max-width:820px){.about-section{grid-template-columns:1fr;gap:34px;justify-items:center;padding:56px 24px}.about-photo-wrap{width:100%;max-width:280px;aspect-ratio:760/909}.about-section p{font-size:17px}}
+@media(max-width:820px){.about-section{grid-template-columns:1fr;gap:34px;justify-items:center;margin-top:-72px;padding:34px 24px 56px}.about-photo-wrap{width:100%;max-width:280px;aspect-ratio:760/909}.about-section p{font-size:17px}}
 
 </style>
 </head>
@@ -296,8 +296,6 @@ footer{text-align:center;padding:24px;font-size:11px;color:var(--light);letter-s
       <h1 class="hero-name">Sofiia C</h1>
     </div>
   </section>
-
-  <hr class="section-rule">
 
   <!-- ABOUT -->
   <section class="about-section reveal" id="about">
