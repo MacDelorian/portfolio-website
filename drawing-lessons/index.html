@@ -54,8 +54,13 @@ body{background:var(--cream);color:var(--ink);font-family:"Nunito",sans-serif;fo
 .section-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
 .section-title{font-family:"Comfortaa",sans-serif;font-size:clamp(24px,3.5vw,38px);font-weight:600;color:var(--ink);margin-bottom:20px;line-height:1.2}
 .section-sub{font-size:14px;color:var(--mid);line-height:1.9;max-width:520px}
-.about-grid{display:grid;grid-template-columns:460px 1fr;gap:64px;align-items:stretch;margin-top:52px}
-.about-photo-wrap{position:relative;width:460px}
+.about-grid{display:grid;grid-template-columns:310px 1fr;gap:48px;align-items:stretch;margin-top:52px}
+.about-photo-wrap{position:relative;width:310px}
+@media(max-width:1540px){.about-grid{grid-template-columns:334px 1fr}.about-photo-wrap{width:334px}}
+@media(max-width:1440px){.about-grid{grid-template-columns:346px 1fr}.about-photo-wrap{width:346px}}
+@media(max-width:1340px){.about-grid{grid-template-columns:352px 1fr}.about-photo-wrap{width:352px}}
+@media(max-width:1260px){.about-grid{grid-template-columns:368px 1fr}.about-photo-wrap{width:368px}}
+@media(max-width:1210px){.about-grid{grid-template-columns:390px 1fr}.about-photo-wrap{width:390px}}
 .about-photo{position:absolute;top:0;left:0;height:100%;width:auto;max-width:100%;object-fit:contain;border-radius:10px;display:block}
 .about-text p{font-size:15px;color:var(--mid);line-height:1.9;margin-bottom:16px}
 .about-text strong{color:var(--ink);font-weight:500}
