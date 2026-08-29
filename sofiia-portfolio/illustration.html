@@ -248,13 +248,12 @@ footer{text-align:center;padding:24px;font-size:11px;color:var(--light);letter-s
    wrapper, so the two read as a single painting rather than two bands */
 .deck-top{position:relative;background:#131a3a var(--stars) center bottom/cover}
 .deck-top::after{content:'';position:absolute;left:0;right:0;bottom:0;height:130px;background:linear-gradient(to bottom,rgba(250,248,245,0),var(--cream));pointer-events:none;z-index:2}
-.deck-head{position:relative;padding:104px 40px 40px;text-align:center;color:#fdf7e2}
+.deck-head{position:relative;padding:104px 40px 30px;text-align:center;color:#fdf7e2}
 .deck-head::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,10,22,.5),rgba(8,10,22,.12));pointer-events:none}
 .deck-head>*{position:relative;z-index:1}
-/* a thin gold rule parts the title from the details below it */
-.deck-rule{position:relative;z-index:1;max-width:900px;margin:8px auto 0;height:1px;background:linear-gradient(to right,rgba(232,205,150,0),rgba(232,205,150,.8) 18%,rgba(232,205,150,.8) 82%,rgba(232,205,150,0))}
-.deck-rule::after{content:'';position:absolute;left:50%;top:50%;width:7px;height:7px;transform:translate(-50%,-50%) rotate(45deg);background:#f5e6b8;box-shadow:0 0 12px rgba(245,230,184,.9)}
-@media(max-width:620px){.deck-rule{max-width:82%}}
+/* a gold rule parts the title from the details below it */
+.deck-rule{position:relative;z-index:1;max-width:1180px;margin:52px auto 0;height:2px;border-radius:2px;background:linear-gradient(to right,rgba(247,227,180,0),#f7e3b4 4%,#f7e3b4 96%,rgba(247,227,180,0));box-shadow:0 0 18px rgba(247,227,180,.55)}
+@media(max-width:620px){.deck-rule{max-width:86%;margin-top:38px}}
 .deck-head .label{font-family:'Comfortaa',sans-serif;font-weight:600;font-size:clamp(19px,2.3vw,30px);letter-spacing:.02em;color:#fff;margin-bottom:6px;text-shadow:0 2px 18px rgba(8,10,22,.6)}
 .deck-head h1{font-family:'Comfortaa',sans-serif;font-weight:700;font-size:clamp(44px,7.4vw,96px);line-height:1.05;letter-spacing:.01em;color:#f5e6b8;margin-bottom:20px;text-shadow:0 0 44px rgba(245,220,120,.35),0 4px 22px rgba(0,0,0,.45)}
 .deck-head p{font-size:15px;color:rgba(240,242,250,.88);max-width:560px;margin:0 auto 26px;text-shadow:0 2px 14px rgba(8,10,22,.6)}
@@ -267,7 +266,7 @@ footer{text-align:center;padding:24px;font-size:11px;color:var(--light);letter-s
 @media(max-width:620px){.pages{padding:0 20px 60px;gap:18px;grid-template-columns:1fr}.deck-head{padding:44px 24px 30px}}
 
 /* the deck's own about page, rebuilt as part of the site */
-.intro{position:relative;color:#eef0f8;font-family:'Comfortaa',sans-serif;padding:34px 40px 120px}
+.intro{position:relative;color:#eef0f8;font-family:'Comfortaa',sans-serif;padding:66px 40px 120px}
 .intro-inner{position:relative;z-index:1;max-width:1080px;margin:0 auto;text-shadow:0 2px 14px rgba(8,10,22,.8),0 0 30px rgba(8,10,22,.5)}
 .intro-top{display:grid;grid-template-columns:150px minmax(240px,1fr) auto;gap:32px 44px;align-items:stretch;margin-bottom:46px}
 /* the frame has no height of its own, so the row is sized by the text and the
@@ -298,7 +297,7 @@ footer{text-align:center;padding:24px;font-size:11px;color:var(--light);letter-s
     .intro-cols{grid-column:1/-1;grid-template-columns:1fr 1fr;gap:34px}
 }
 @media(max-width:620px){
-  .intro{padding:48px 22px 92px}
+  .intro{padding:46px 22px 92px}
   .intro-top{grid-template-columns:1fr;justify-items:center;text-align:center}
   .intro-photo-wrap{width:170px;aspect-ratio:3/4}
   .intro-photo{position:static;width:100%;height:100%}
