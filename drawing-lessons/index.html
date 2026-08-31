@@ -86,6 +86,27 @@ body{background:var(--cream);color:var(--ink);font-family:"Nunito",sans-serif;fo
 .approach-icon{font-size:26px;flex-shrink:0;width:44px;text-align:center}
 .approach-item h3{font-family:"Comfortaa",sans-serif;font-size:20px;font-weight:700;margin-bottom:14px;color:var(--green)}
 .approach-item p{font-size:14px;color:var(--mid);line-height:1.9;margin-bottom:10px}.approach-item p:last-child{margin-bottom:0}.approach-bullet-list{list-style:none;padding:0;margin:6px 0 10px}.approach-bullet-list li{padding:3px 0 3px 18px;position:relative;font-size:14px;color:var(--mid);line-height:1.7}.approach-bullet-list li::before{content:"·";position:absolute;left:4px;color:var(--green);font-size:20px;line-height:1.2}
+.offers-section{background:var(--green-pale)}
+.offer-card{margin-top:36px;background:#fff;border:1px solid var(--rule);border-radius:18px;overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.05)}
+.offer-head{background:var(--green);color:#fff;padding:30px 34px}
+.offer-kicker{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:10px}
+.offer-head h3{font-family:"Comfortaa",sans-serif;font-size:clamp(20px,2.4vw,28px);font-weight:700;line-height:1.28;margin-bottom:20px;color:#fff}
+.offer-meta{display:flex;flex-wrap:wrap;gap:9px}
+.offer-meta span{background:rgba(255,255,255,.16);border-radius:20px;padding:6px 16px;font-size:13px;font-weight:600}
+.offer-meta .offer-meta-accent{background:var(--accent);color:#fff}
+.offer-body{padding:30px 34px}
+.offer-body p{font-size:14px;color:var(--mid);line-height:1.9;margin-bottom:14px}
+.offer-perks{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:9px}
+.offer-perks li{position:relative;padding-left:27px;font-size:14px;color:var(--ink);line-height:1.7}
+.offer-perks li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--green);font-weight:700}
+.offer-sub{font-family:"Comfortaa",sans-serif;font-size:16px;font-weight:700;color:var(--green);margin:28px 0 14px}
+.offer-modules{list-style:none;counter-reset:mod;padding:0;margin:0 0 28px;display:grid;gap:10px}
+.offer-modules li{counter-increment:mod;position:relative;padding:15px 20px 15px 56px;background:var(--cream);border:1px solid var(--rule);border-radius:12px}
+.offer-modules li::before{content:counter(mod);position:absolute;left:18px;top:15px;width:25px;height:25px;border-radius:50%;background:var(--green);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.offer-modules strong{display:block;font-size:15px;color:var(--ink);font-weight:700}
+.offer-modules em{font-style:normal;font-size:12px;font-weight:600;color:var(--green)}
+.offer-modules span{display:block;font-size:13px;color:var(--mid);line-height:1.75;margin-top:6px}
+@media(max-width:580px){.offer-head,.offer-body{padding:22px 20px}.offer-modules li{padding:14px 16px 14px 50px}.offer-modules li::before{left:14px}}
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
 .price-card{padding:28px 22px;border:1px solid var(--rule);border-radius:12px;background:#fff;transition:transform .25s,box-shadow .25s;position:relative}
 .price-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(74,124,89,.12)}
@@ -179,6 +200,7 @@ h1,h2,h3,h4,h5,h6{font-family:"Comfortaa",sans-serif!important}
   <a class="nav-link" onclick="goTo('about');closeNav()" data-i18n="nav_about">Про мене</a>
   <a class="nav-link" onclick="goTo('approach');closeNav()" data-i18n="nav_approach">Підхід</a>
   <a class="nav-link" onclick="goTo('pricing');closeNav()" data-i18n="nav_pricing">Вартість</a>
+  <a class="nav-link" onclick="goTo('offers');closeNav()" data-i18n="nav_offers">Курс з книжки</a>
   <a class="nav-link" onclick="goTo('signup');closeNav()" data-i18n="nav_cta">Записатись</a>
   <a class="nav-link" onclick="goTo('contacts');closeNav()" data-i18n="nav_contacts">Контакти</a>
   <div class="nav-footer">
@@ -350,6 +372,33 @@ h1,h2,h3,h4,h5,h6{font-family:"Comfortaa",sans-serif!important}
   </div>
 </section>
 <hr class="section-rule">
+<section class="section-pad offers-section" id="offers">
+  <div class="max-w">
+    <p class="section-label reveal" data-i18n="offers_label">Особисті пропозиції</p>
+    <h2 class="section-title reveal" data-i18n="offers_title">Окремі програми</h2>
+    <p class="section-sub reveal" data-i18n="offers_sub">Формати поза звичайними уроками — з власною програмою і результатом.</p>
+    <article class="offer-card reveal">
+      <div class="offer-head">
+        <p class="offer-kicker" data-i18n="course_kicker">Міні-курс з книжкової ілюстрації · для дітей від 10 років</p>
+        <h3 data-i18n="course_title">Створити власну книжку у 10 років? Так!</h3>
+        <div class="offer-meta">
+          <span>15 € <span style="background:none;padding:0;font-weight:400;opacity:.75" data-i18n="course_meta_lesson">/ урок</span></span>
+          <span data-i18n="course_meta_modules">5 модулів · 10+ уроків</span>
+          <span class="offer-meta-accent" data-i18n="course_meta_online">Онлайн</span>
+        </div>
+      </div>
+      <div class="offer-body">
+        <ul class="offer-perks" data-i18n-html="course_perks"><li>У результаті — власна книга, готова до друку</li><li>Індивідуальний план під ваші цілі</li><li>Теорія і практика книжкової ілюстрації</li><li>Навчаю програмам для цифрового малювання з нуля</li></ul>
+        <p data-i18n="course_p1">Разом створимо міні-книжку на ваш вибір: улюблена казка, збірка віршів або власна історія. А можна проілюструвати справжню історію — щось, що розкажуть дідусь чи бабуся, і воно назавжди залишиться в малюнках.</p>
+        <p data-i18n="course_p2">Можна зробити коротку книжечку на кілька розворотів і спробувати один підхід до побудови книги (10+ уроків). А можна заглибитись більше — розібрати базу книжкової ілюстрації, композицію і колір ґрунтовніше (20+ уроків). Темп і обсяг обираєте саме ви.</p>
+        <p class="offer-sub" data-i18n="course_plan_title">Приблизний план курсу</p>
+        <ol class="offer-modules" data-i18n-html="course_modules"><li><strong>Знайомство</strong><em>1 урок · безкоштовно</em><span>Міні-практика — одразу щось малюємо, починаємо вивчати програму, обговорюємо бажання.</span></li><li><strong>Дизайн персонажу</strong><em>1–3 уроки</em><span>Придумуємо персонажа або кількох, паралельно освоюємо програму для малювання.</span></li><li><strong>Наброски розворотів і структура книги</strong><em>2–5 уроків</em><span>Де розмістити текст і малюнок на розвороті, яким кольором передати настрій сцени, як розробити обкладинку.</span></li><li><strong>Ілюстрації</strong><em>4–10 уроків</em><span>Створюємо повноцінні ілюстрації для книги і продовжуємо освоювати програму.</span></li><li><strong>Фінальна верстка</strong><em>2–5 уроків</em><span>Розташування тексту, шрифти, фінальне оформлення — і книжка готова.</span></li></ol>
+        <a class="btn-primary" style="cursor:pointer" onclick="goTo('signup')" data-i18n="course_cta">Безкоштовний пробний урок</a>
+      </div>
+    </article>
+  </div>
+</section>
+<hr class="section-rule">
 <section class="section-pad contacts-section" id="contacts">
   <div class="max-w">
     <p class="section-label reveal" data-i18n="contacts_label">Контакти</p>
@@ -444,6 +493,18 @@ function handleSubmit(e){
 const translations = {
   ua: {
     nav_about:"Про мене", nav_approach:"Підхід", nav_pricing:"Вартість",
+    nav_offers:"Курс з книжки",
+    offers_label:"Особисті пропозиції", offers_title:"Окремі програми",
+    offers_sub:"Формати поза звичайними уроками — з власною програмою і результатом.",
+    course_kicker:"Міні-курс з книжкової ілюстрації · для дітей від 10 років",
+    course_title:"Створити власну книжку у 10 років? Так!",
+    course_meta_lesson:"/ урок", course_meta_modules:"5 модулів · 10+ уроків", course_meta_online:"Онлайн",
+    course_perks:"<li>У результаті — власна книга, готова до друку</li><li>Індивідуальний план під ваші цілі</li><li>Теорія і практика книжкової ілюстрації</li><li>Навчаю програмам для цифрового малювання з нуля</li>",
+    course_p1:"Разом створимо міні-книжку на ваш вибір: улюблена казка, збірка віршів або власна історія. А можна проілюструвати справжню історію — щось, що розкажуть дідусь чи бабуся, і воно назавжди залишиться в малюнках.",
+    course_p2:"Можна зробити коротку книжечку на кілька розворотів і спробувати один підхід до побудови книги (10+ уроків). А можна заглибитись більше — розібрати базу книжкової ілюстрації, композицію і колір ґрунтовніше (20+ уроків). Темп і обсяг обираєте саме ви.",
+    course_plan_title:"Приблизний план курсу",
+    course_modules:"<li><strong>Знайомство</strong><em>1 урок · безкоштовно</em><span>Міні-практика — одразу щось малюємо, починаємо вивчати програму, обговорюємо бажання.</span></li><li><strong>Дизайн персонажу</strong><em>1–3 уроки</em><span>Придумуємо персонажа або кількох, паралельно освоюємо програму для малювання.</span></li><li><strong>Наброски розворотів і структура книги</strong><em>2–5 уроків</em><span>Де розмістити текст і малюнок на розвороті, яким кольором передати настрій сцени, як розробити обкладинку.</span></li><li><strong>Ілюстрації</strong><em>4–10 уроків</em><span>Створюємо повноцінні ілюстрації для книги і продовжуємо освоювати програму.</span></li><li><strong>Фінальна верстка</strong><em>2–5 уроків</em><span>Розташування тексту, шрифти, фінальне оформлення — і книжка готова.</span></li>",
+    course_cta:"Безкоштовний пробний урок",
     nav_cta:"Записатись", nav_contacts:"Контакти",
     hero_tag:"Уроки малювання від 4 років · онлайн / офлайн",
     hero_title:"Малювання<br>для <em>дітей</em>",
@@ -495,6 +556,18 @@ const translations = {
   },
   en: {
     nav_about:"About me", nav_approach:"Approach", nav_pricing:"Pricing",
+    nav_offers:"Book course",
+    offers_label:"Personal offers", offers_title:"Separate programmes",
+    offers_sub:"Formats outside the regular lessons — with their own plan and their own result.",
+    course_kicker:"Mini-course in book illustration · for children from 10 years",
+    course_title:"Make your own book at 10? Yes!",
+    course_meta_lesson:"/ lesson", course_meta_modules:"5 modules · 10+ lessons", course_meta_online:"Online",
+    course_perks:"<li>You end up with your own book, ready to print</li><li>An individual plan built around your goals</li><li>Theory and practice of book illustration</li><li>I teach the digital drawing software from scratch</li>",
+    course_p1:"Together we make a mini-book of your choice: a favourite fairy tale, a collection of poems, or a story you invent yourself. You can even illustrate a real story — something a grandparent tells you — and it stays in the drawings for good.",
+    course_p2:"You can make a short book of a few spreads and try one approach to building it (10+ lessons). Or you can go deeper — work through the fundamentals of book illustration, composition and colour more thoroughly (20+ lessons). You choose the pace and the scope.",
+    course_plan_title:"Rough course plan",
+    course_modules:"<li><strong>Getting to know each other</strong><em>1 lesson · free</em><span>A short practice — we draw something straight away, start learning the software and talk about what you want.</span></li><li><strong>Character design</strong><em>1–3 lessons</em><span>We invent a character or several, and learn the drawing software along the way.</span></li><li><strong>Spread sketches and book structure</strong><em>2–5 lessons</em><span>Where to place text and image on a spread, which colours carry the mood of a scene, how to design the cover.</span></li><li><strong>Illustrations</strong><em>4–10 lessons</em><span>We create the full illustrations for the book and keep building software skills.</span></li><li><strong>Final layout</strong><em>2–5 lessons</em><span>Text placement, fonts, finishing touches — and the book is done.</span></li>",
+    course_cta:"Free trial lesson",
     nav_cta:"Book", nav_contacts:"Contacts",
     hero_tag:"Drawing lessons from age 4 · online / in-person",
     hero_title:"Drawing<br>for <em>children</em>",
@@ -546,6 +619,18 @@ const translations = {
   },
   fr: {
     nav_about:"À propos", nav_approach:"Approche", nav_pricing:"Tarifs",
+    nav_offers:"Cours livre",
+    offers_label:"Offres personnelles", offers_title:"Programmes à part",
+    offers_sub:"Des formats en dehors des cours habituels — avec leur propre programme et leur propre résultat.",
+    course_kicker:"Mini-cours d'illustration de livre · pour les enfants dès 10 ans",
+    course_title:"Créer son propre livre à 10 ans ? Oui !",
+    course_meta_lesson:"/ cours", course_meta_modules:"5 modules · 10+ cours", course_meta_online:"En ligne",
+    course_perks:"<li>Au bout du compte : votre propre livre, prêt à imprimer</li><li>Un plan individuel adapté à vos objectifs</li><li>Théorie et pratique de l'illustration de livre</li><li>J'enseigne les logiciels de dessin numérique depuis zéro</li>",
+    course_p1:"Ensemble nous créons un mini-livre de votre choix : un conte préféré, un recueil de poèmes, ou une histoire que vous inventez. On peut même illustrer une histoire vraie — quelque chose que raconte un grand-parent — et elle reste dans les dessins pour toujours.",
+    course_p2:"On peut faire un livre court de quelques doubles pages et essayer une approche de sa construction (10+ cours). Ou aller plus loin — travailler les bases de l'illustration de livre, la composition et la couleur en profondeur (20+ cours). Vous choisissez le rythme et l'ampleur.",
+    course_plan_title:"Plan indicatif du cours",
+    course_modules:"<li><strong>Faisons connaissance</strong><em>1 cours · gratuit</em><span>Une petite pratique — on dessine tout de suite, on commence le logiciel et on parle de vos envies.</span></li><li><strong>Design de personnage</strong><em>1–3 cours</em><span>Nous inventons un personnage ou plusieurs, tout en apprenant le logiciel de dessin.</span></li><li><strong>Croquis des doubles pages et structure du livre</strong><em>2–5 cours</em><span>Où placer le texte et l'image sur une double page, quelles couleurs portent l'ambiance d'une scène, comment concevoir la couverture.</span></li><li><strong>Illustrations</strong><em>4–10 cours</em><span>Nous créons les illustrations complètes du livre et continuons à maîtriser le logiciel.</span></li><li><strong>Mise en page finale</strong><em>2–5 cours</em><span>Placement du texte, polices, finitions — et le livre est prêt.</span></li>",
+    course_cta:"Cours d'essai gratuit",
     nav_cta:"Réserver", nav_contacts:"Contacts",
     hero_tag:"Cours de dessin · Dès 4 ans · en ligne / présentiel",
     hero_title:"Dessin<br>pour <em>enfants</em>",
