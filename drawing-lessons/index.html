@@ -58,16 +58,14 @@ body{background:var(--cream);color:var(--ink);font-family:"Nunito",sans-serif;fo
 .about-photo-wrap{position:relative;width:310px}
 @media(max-width:1540px){.about-grid{grid-template-columns:334px 1fr}.about-photo-wrap{width:334px}}
 @media(max-width:1440px){.about-grid{grid-template-columns:346px 1fr}.about-photo-wrap{width:346px}}
-@media(max-width:1340px){.about-grid{grid-template-columns:352px 1fr}.about-photo-wrap{width:352px}}
-@media(max-width:1260px){.about-grid{grid-template-columns:368px 1fr}.about-photo-wrap{width:368px}}
-@media(max-width:1210px){.about-grid{grid-template-columns:390px 1fr}.about-photo-wrap{width:390px}}
+@media(max-width:1340px){.about-grid{grid-template-columns:378px 1fr}.about-photo-wrap{width:378px}}
 .about-photo{position:absolute;top:0;left:0;height:100%;width:auto;max-width:100%;object-fit:contain;border-radius:10px;display:block}
 .about-text p{font-size:15px;color:var(--mid);line-height:1.9;margin-bottom:16px}
 .about-text strong{color:var(--ink);font-weight:500}
 .about-text em{color:var(--green);font-style:italic}
 .about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .about-tags span{font-size:11px;color:var(--green);background:var(--green-pale);padding:5px 13px;border-radius:20px}
-@media(max-width:1180px){.about-grid{grid-template-columns:1fr;gap:32px}.about-photo-wrap{position:static;width:min(100%,360px);height:auto}.about-photo{position:static;width:100%;height:auto;max-width:none;border-radius:12px}}
+@media(max-width:1260px){.about-grid{grid-template-columns:1fr;gap:32px}.about-photo-wrap{position:static;width:min(100%,360px);height:auto}.about-photo{position:static;width:100%;height:auto;max-width:none;border-radius:12px}}
 .gallery{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(150px,1fr);gap:12px;margin-top:44px;padding:6px 0;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}.gallery::-webkit-scrollbar{height:6px}.gallery::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}.gallery::-webkit-scrollbar-track{background:transparent}
 .gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;border-radius:6px;transition:transform .3s,box-shadow .3s;display:block;scroll-snap-align:start}
 .gallery img:hover{transform:scale(1.02);box-shadow:0 8px 28px rgba(30,42,30,.15)}
@@ -250,8 +248,8 @@ h1,h2,h3,h4,h5,h6{font-family:"Comfortaa",sans-serif!important}
         <p data-i18n="about_p4">Мені важливо йти за вашими цілями, а не за шаблонами, які не допомагають саме в тому, що потрібно. Вдосконалення конкретних технік, розібрати ази живопису, навчити конкретним програмам та технікам у цифровій ілюстрації, а можливо приємно провести час за улюбленим хобі.</p>
         <p data-i18n="about_p5">Я хочу допомогти розібратись з будь-чим та поділитись своїм досвідом. З будь-якої точки світу. Тут ви зможете ознайомитись з деталями та заповнити форму для пробного уроку.</p>
         <div class="about-tags">
-          <span>Цифрова ілюстрація</span><span>Олійний живопис</span><span>Рисунок</span><span>Акварель</span>
-          <span>Графіка</span>
+          <span>Цифрова ілюстрація</span><span>Книжкова ілюстрація</span><span>Олійний живопис</span><span>Рисунок</span>
+          <span>Акварель</span><span>Графіка</span><span>Майстер-класи</span>
         </div>
       </div>
     </div>
@@ -325,14 +323,14 @@ h1,h2,h3,h4,h5,h6{font-family:"Comfortaa",sans-serif!important}
         <p class="price-amount" style="font-size:28px">₴2000 <span style="font-size:20px;opacity:.7">/ €40</span></p>
         <p class="price-save" data-i18n="pc2_save">економія 200 грн / €4</p>
         <p class="price-desc" data-i18n="pc2_desc">Оптимальний старт</p>
-        <ul class="price-items" data-i18n-html="pc2_items"><li>4 уроки по 55 хв</li></ul>
+        <ul class="price-items" data-i18n-html="pc2_items"><li>4 уроки по 55 хв</li><li>Зворотній зв’язок батькам</li></ul>
       </div>
       <div class="price-card reveal">
         <p class="price-name" data-i18n="pc3_name">Пакет 8 занять</p>
         <p class="price-amount" style="font-size:28px">₴3900 <span style="font-size:20px;opacity:.7">/ €75</span></p>
         <p class="price-save" data-i18n="pc3_save">економія 500 грн / €12</p>
         <p class="price-desc" data-i18n="pc3_desc">Для більш серйозного розвитку</p>
-        <ul class="price-items" data-i18n-html="pc3_items"><li>8 уроків по 55 хв</li></ul>
+        <ul class="price-items" data-i18n-html="pc3_items"><li>8 уроків по 55 хв</li><li>Зворотній зв’язок батькам</li></ul>
       </div>
     </div>
     <div class="price-pair reveal">
@@ -598,9 +596,9 @@ const translations = {
     pc1_name:"Single lesson", pc1_desc:"For those who want to try or learn at their own pace",
     pc1_items:"<li>1 lesson 55 min</li>",
     pc2_name:"Pack of 4 lessons", pc2_save:"save 200 UAH", pc2_desc:"The optimal start",
-    pc2_items:"<li>4 lessons of 55 min</li>",
+    pc2_items:"<li>4 lessons of 55 min</li><li>Feedback for parents</li>",
     pc3_name:"Pack of 8 lessons", pc3_save:"save 500 UAH", pc3_desc:"For more serious development",
-    pc3_items:"<li>8 lessons of 55 min</li>",
+    pc3_items:"<li>8 lessons of 55 min</li><li>Feedback for parents</li>",
     pair_h4:"Pair lesson", pair_p:"Two children in one lesson — affordable and fun", pair_unit:"/ two",
     price_free_p:"Not sure? Start with no risk", price_free_strong:"✶ Trial lesson — free of charge",
     contacts_label:"Contacts", contacts_title:"Where to find me", contacts_sub:"Write in any convenient way.",
@@ -661,9 +659,9 @@ const translations = {
     pc1_name:"Cours individuel", pc1_desc:"Pour ceux qui veulent essayer ou progresser à leur rythme",
     pc1_items:"<li>1 cours de 55 min</li>",
     pc2_name:"Pack de 4 cours", pc2_save:"économie 200 UAH", pc2_desc:"Le meilleur départ",
-    pc2_items:"<li>4 cours de 55 min</li>",
+    pc2_items:"<li>4 cours de 55 min</li><li>Retour aux parents</li>",
     pc3_name:"Pack de 8 cours", pc3_save:"économie 500 UAH", pc3_desc:"Pour un développement plus sérieux",
-    pc3_items:"<li>8 cours de 55 min</li>",
+    pc3_items:"<li>8 cours de 55 min</li><li>Retour aux parents</li>",
     pair_h4:"Cours en duo", pair_p:"Deux enfants dans un cours — économique et amusant", pair_unit:"/ deux",
     price_free_p:"Pas sûr·e ? Commencez sans risque", price_free_strong:"✶ Cours d'essai — gratuit",
     contacts_label:"Contacts", contacts_title:"Où me trouver", contacts_sub:"Écrivez-moi de la façon qui vous convient.",
