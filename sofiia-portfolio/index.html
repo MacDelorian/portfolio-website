@@ -192,7 +192,7 @@ footer{text-align:center;padding:24px;font-size:11px;color:var(--light);letter-s
 /* SERVICE TABS */
 /* a warm band in the same tone as the CV section, with the tabs hanging off a
    constellation line drawn across it in the gold of the stars */
-.service-tabs{position:relative;display:flex;justify-content:center;align-items:center;gap:44px;flex-wrap:wrap;padding:46px 24px 26px;background:var(--warm-white,#f0ece5)}
+.service-tabs{position:relative;display:flex;justify-content:center;align-items:center;gap:44px;flex-wrap:wrap;padding:46px 24px 7px;background:var(--warm-white,#f0ece5)}
 .service-tabs::before{content:'';position:absolute;top:25px;left:8%;right:8%;height:1px;background:repeating-linear-gradient(to right,rgba(200,168,130,.75) 0 3px,transparent 3px 9px)}
 .stab{position:relative;font-family:'Comfortaa',sans-serif;font-size:16px;font-weight:300;color:rgba(28,26,24,.45);background:none;border:none;cursor:pointer;padding:6px 0;transition:color .25s ease}
 /* each tab is a node on that line; the selected one becomes a star */
@@ -204,7 +204,7 @@ footer{text-align:center;padding:24px;font-size:11px;color:var(--light);letter-s
 /* stacked rows would leave the line stranded above one of them, so on narrow
    screens the star sits inline instead */
 @media(max-width:620px){
-.service-tabs{gap:20px;padding:20px 16px}
+.service-tabs{gap:20px;padding:20px 16px 6px}
 .service-tabs::before{display:none}
 .stab{font-size:15px;display:inline-flex;align-items:center;gap:7px}
 .stab::before{position:static;transform:none;width:9px;height:9px;background:transparent}
