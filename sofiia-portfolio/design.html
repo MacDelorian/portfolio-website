@@ -278,6 +278,16 @@ footer{text-align:center;padding:24px;font-size:11px;color:var(--light);letter-s
 .contact-section .contact-email a{color:#fff;border-bottom-color:rgba(255,255,255,.55)}
 .contact-section>p[data-i18n="contact_cta"]{text-shadow:0 1px 12px rgba(8,10,22,.8)}
 @media(max-width:620px){.contact-section{aspect-ratio:auto;min-height:146vw;margin-top:-70px;padding:34% 20px 14%;background-size:cover;background-position:center}}
+
+/* on the design page the closing strip is the ending: the contacts sit plain
+   on the page, with no painting behind them */
+.contact-section{aspect-ratio:auto;min-height:0;margin-top:0;padding:76px 24px 86px;display:block;text-align:center;background:var(--cream);color:var(--ink)}
+.contact-section>p[data-i18n="contact_cta"]{color:var(--mid)!important;text-shadow:none;margin-bottom:34px}
+.contact-section .contact-link{color:var(--mid);border-color:var(--rule)}
+.contact-section .contact-link:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.contact-section .contact-email{display:inline-block;margin-top:22px;padding:0;background:none;border:none;color:var(--mid);text-shadow:none;font-size:13px}
+.contact-section .contact-email a{color:var(--ink);border-bottom-color:var(--rule)}
+@media(max-width:620px){.contact-section{min-height:0;margin-top:0;padding:56px 20px 64px;background:var(--cream)}}
 </style>
 </head>
 <body>
